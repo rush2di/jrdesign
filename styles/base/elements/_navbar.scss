@@ -1,0 +1,127 @@
+.nav {
+	/***************************************************************************************************************
+		** LOCAL SETTINGS VARIABLES ************************************************************************************
+	  ****************************************************************************************************************/
+	$_item_types: "txt", "icon", "dropdown";
+
+	$_txt_color: $color-shades-000;
+	$_txt_color--active: $color-secondary;
+	/***************************************************************************************************************
+	  ****************************************************************************************************************
+	  ****************************************************************************************************************/
+
+	/* COMPOUND NAV ************************************************************************************************/
+
+	&--compound {
+		display: flex !important;
+		flex-direction: column;
+	}
+
+	/* NAV BLOCK ***************************************************************************************************/
+
+	&__block {
+		display: flex !important;
+		align-items: center;
+	}
+
+	&__block--between {
+		justify-content: space-between;
+	}
+
+	&__block--center {
+		justify-content: center;
+	}
+
+	/* NAV ITEMS ***************************************************************************************************/
+
+	&__item-dropdown {
+		grid-template-columns: auto;
+		display: grid;
+		gap: 1rem;
+	}
+
+	@each $type in $_item_types {
+		&__item-#{$type} {
+			cursor: pointer;
+			// color: $_txt_color;
+			// transition: color 0.2s $easing-expo;
+		}
+
+		&__item-#{$type}--active {
+			color: $_txt_color--active;
+		}
+
+		&__item-#{$type}:hover,
+		&__item-#{$type}:focus,
+		&__item-#{$type}:focus-within {
+			color: $_txt_color--active;
+		}
+	}
+	&__mobile-btn {
+		display: none;
+		@include respond-to("small") {
+			position: relative;
+			display: block;
+			width: fit-content;
+			width: 40px;
+			padding: 0;
+		}
+	}
+
+	&--mobile {
+		display: none !important;
+		@include respond-to("small") {
+			display: flex !important;
+		}
+	}
+	&--not-mobile {
+		@include respond-to("small") {
+			display: none !important;
+		}
+	}
+	&__hamburger {
+		top: 50%;
+		left: 10%;
+		width: 40px;
+		height: 2px;
+		background: #fcfcfc;
+		position: absolute;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+		transition: 0.5s;
+
+		&:before {
+			top: -16px;
+		}
+
+		&:after {
+			top: 16px;
+		}
+
+		&:before,
+		&:after {
+			content: "";
+			position: absolute;
+			width: 40px;
+			height: 2px;
+			background: #fcfcfc;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+			transition: 0.5s;
+		}
+	}
+
+	&__mobile-btn.--open &__hamburger {
+		background: rgba(0, 0, 0, 0);
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+	}
+
+	&__mobile-btn.--open &__hamburger:before {
+		top: 0;
+		transform: rotate(45deg);
+	}
+
+	&__mobile-btn.--open &__hamburger:after {
+		top: 0;
+		transform: rotate(135deg);
+		box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+	}
+}

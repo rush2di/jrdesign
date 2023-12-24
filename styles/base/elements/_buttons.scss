@@ -1,0 +1,250 @@
+.btn {
+  /***************************************************************************************************************
+  	** LOCAL COLOR VARIABLES ***************************************************************************************
+  	****************************************************************************************************************/
+  $color-pairs-1: (
+    "background": $black,
+    "color": white,
+  );
+  $color-pairs-2: (
+    "background": white,
+    "color": $black,
+  );
+  $color-pairs-dark: (
+    "background": $color-shades-900,
+    "color": $color-shades-000,
+  );
+  $color-pairs-light: (
+    "background": $color-shades-000,
+    "color": $color-shades-800,
+  );
+  $color-pairs-success: (
+    "background": $color-success,
+    "color": white,
+  );
+  $color-pairs-danger: (
+    "background": $color-danger,
+    "color": $color-shades-000,
+  );
+  $color-pairs-warning: (
+    "background": $color-warning,
+    "color": $color-shades-000,
+  );
+  $color-pairs-google: (
+    "background": $color-google-red,
+    "color": $color-shades-000,
+  );
+  $color-pairs-facebook: (
+    "background": $color-facebook-blue,
+    "color": $color-shades-000,
+  );
+  $color-pairs-twitter: (
+    "background": $color-twitter-blue,
+    "color": $color-shades-000,
+  );
+  $color-pairs-discord: (
+    "background": $color-discord-pink,
+    "color": $color-shades-000,
+  );
+  $color-pairs-grads-main: (
+    "background": #ed61cb,
+    "background-image": linear-gradient(45deg, #d450b3 10%, #009de1 100%),
+    "color": $color-shades-000,
+  );
+  /****************************************************************************************************************
+  	*****************************************************************************************************************
+  	*****************************************************************************************************************/
+
+  /* BUTTON BASE **************************************************************************************************/
+
+  cursor: pointer;
+  text-align: center;
+  color: white;  
+  min-width: 145px;
+  width: 100%;
+  height: 40px;
+  padding: 0 0.5rem;
+  font-size: 16px;
+  font-weight: 700;
+  transition: background-color 0.4s $easing-expo, color 0.2s $easing-expo;
+  @include btn-builder($effect_light: true);
+
+  /* BUTTON BACKGROUNDS *******************************************************************************************/
+
+  &--bg-main {
+    @include btn-builder($color-pairs-1, true);
+  }
+
+  &--bg-comp {
+    @include btn-builder($color-pairs-2, false);
+  }
+
+  &--bg-dark {
+    @include btn-builder($color-pairs-dark, true);
+  }
+
+  &--bg-light {
+    @include btn-builder($color-pairs-light);
+  }
+
+  &--bg-success {
+    @include btn-builder($color-pairs-success);
+  }
+
+  &--bg-danger {
+    @include btn-builder($color-pairs-danger);
+  }
+
+  &--bg-warning {
+    @include btn-builder($color-pairs-warning);
+  }
+
+  &--bg-google {
+    @include btn-builder($color-pairs-google);
+  }
+
+  &--bg-facebook {
+    @include btn-builder($color-pairs-facebook);
+  }
+
+  &--bg-twitter {
+    @include btn-builder($color-pairs-twitter);
+  }
+
+  &--bg-discord {
+    @include btn-builder($color-pairs-discord);
+  }
+
+  &--grads-main {
+    @include btn-grads-builder(
+      $color-pairs-grads-main,
+      $font_family: $font__main,
+      $effect_light: true
+    );
+  }
+
+  /* BUTTON OUTLINE ***********************************************************************************************/
+
+  &--outline-main {
+    @include btn-outline-builder($color-pairs-1);
+  }
+
+  &--outline-comp {
+    @include btn-outline-builder($color-pairs-2);
+  }
+
+  &--outline-dark {
+    @include btn-outline-builder($color-pairs-dark, true);
+  }
+
+  &--outline-light {
+    @include btn-outline-builder($color-pairs-light);
+  }
+
+  &--outline-success {
+    @include btn-outline-builder($color-pairs-success, true);
+  }
+
+  &--outline-danger {
+    @include btn-outline-builder($color-pairs-danger);
+  }
+
+  &--outline-warning {
+    @include btn-outline-builder($color-pairs-warning);
+  }
+
+  &--out-grads-main {
+    @include btn-out-grads-builder(
+      $color-pairs-grads-main,
+      $font_family: $font__main,
+      $effect_light: true
+    );
+  }
+
+  /* BUTTON STRUCTURES **********************************************************************************************/
+
+  @include respond-to("x-small") {
+    width: 100%;
+    width: -webkit-fill-available;
+    justify-content: center;
+  }
+
+  &--square {
+    padding: 0.85rem;
+    border-radius: 0.65rem;
+  }
+
+  &--naked {
+    border: 0;
+    background-color: transparent;
+    display: inline-block;
+  }
+
+  &--fluid {
+    width: 100%;
+  }
+
+  &--fluid-responsive {
+    width: 300px;
+    @include respond-to("small") {
+      width: 100%;
+    }
+  }
+
+  &--flex-around {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  &--flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &--flex::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 1px;
+    background-color: inherit;
+  }
+
+  &--icon {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 1rem;
+  }
+
+  &--rounded {
+    border-radius: $structure-radius-lg;
+  }
+
+  &:disabled,
+  &:hover:disabled,
+  &:focus:disabled,
+  &:active:disabled {
+    background-color: $color-shades-500;
+    color: white;
+  }
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  @extend .btn;
+}
+
+a.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  @include respond-to("x-small") {
+    width: 100%;
+    width: -webkit-fill-available;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,76 @@
+.about-us {
+  @include initHero(485px, 385px);
+  .covers {
+    &__wrapper {
+      display: flex;
+      position: relative;
+      margin-top: -8rem;
+      perspective: 350px;
+    }
+    &__wrapper img {
+      object-fit: cover;
+      object-position: center;
+    }
+    &__wrapper img:first-child {
+      max-width: 400px;
+      margin-right: 1.5rem;
+    }
+    &__wrapper img:last-child {
+      max-width: 250px;
+    }
+    @media screen and (max-width: 768px) {
+      &__wrapper {
+        margin-top: -5rem;
+      }
+      &__wrapper img:first-child {
+        max-width: 270px;
+        margin-right: 1.5rem;
+      }
+      &__wrapper img:last-child {
+        max-width: 160px;
+      }
+    }
+    @media screen and (max-width: 501px) {
+      &__wrapper {
+        flex-direction: column;
+        margin-top: -5rem;
+      }
+      &__wrapper img:first-child {
+        width: 100%;
+        height: 200px;
+        max-width: 100%;
+        margin-right: 0;
+      }
+      &__wrapper img:last-child {
+        width: 100%;
+        height: 200px;
+        max-width: 100%;
+        margin-top: 1.5rem;
+      }
+    }
+  }
+  .section1 {
+    &__wrapper,
+    &__gridWrapper {
+      padding: 4rem 0;
+    }
+    &__gridWrapper .grid2 {
+      row-gap: 4rem;
+      min-height: 280px;
+    }
+    @media screen and (max-width: 768px) {
+      &__wrapper,
+      &__gridWrapper {
+        padding: 2rem 0;
+      }
+      &__gridWrapper .grid2 {
+        row-gap: 2rem;
+      }
+    }
+    @media screen and (max-width: 501px) {
+      &__gridWrapper .grid2 {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}

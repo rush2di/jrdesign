@@ -1,0 +1,40 @@
+@import "../../../styles/abstracts/variables/variables";
+
+.header {
+  &__wrapper {
+    background: $black;
+    min-height: 400px;
+  }
+  &__wrapper [class~="container"] {
+    display: flex;
+    align-items: flex-end;
+    min-height: inherit;
+  }
+  &__content {
+    position: relative;
+    margin: 0 0 5rem;
+    padding: 0 0 3rem;
+  }
+  &__content [class~="huge1"] {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  }
+  @media screen and (max-width: 500px) {
+    &__wrapper {
+      min-height: 400px;
+    }
+    &__content {
+      margin: 0 0 5rem;
+      padding: 0;
+    }
+  }
+  @media screen and (max-width: 426px) {
+    &__wrapper {
+      min-height: 350px;
+    }
+  }
+}

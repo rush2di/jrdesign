@@ -1,0 +1,102 @@
+.contact-us {
+  @include initHero(550px, 450px, 390px);
+  .section {
+    &__wrapper {
+      background-color: $black;
+      padding: 0 0 10rem;
+      margin-top: -5rem;
+      @media screen and (max-width: 768px) {
+        padding: 0 0 5rem;
+      }
+    }
+    &__addresses {
+      color: white;
+      margin-bottom: 1.5rem;
+    }
+    &__addresses:last-child {
+      margin-bottom: 0;
+    }
+    &__addresses a {
+      margin-bottom: 1rem;
+    }
+    &__addresses a:last-child {
+      margin-bottom: 0;
+    }
+    &__addressesWrapper {
+      margin-bottom: 1.5rem;
+    }
+    &__formWrapper {
+      background: white;
+      padding: 1.5rem 1.75rem;
+      position: relative;
+      @media screen and (max-width: 768px) {
+        grid-area: 2/1;
+      }
+    }
+    &__formWrapper .field {
+      min-height: 110px;
+      position: relative;
+    }
+    &__formWrapper .field label {
+      font-weight: 600;
+    }
+    &__formWrapper .field:focus-within input {
+      border-left: 1.5px solid #52a4e7;
+    }
+    &__formWrapper input,
+    &__formWrapper textarea {
+      margin-top: 1rem;
+      padding: 0.65rem;
+      border: 1px solid $gray4;
+      background: #e0e0e0;
+      color: $black;
+      outline: none;
+    }
+    &__formWrapper textarea {
+      resize: none;
+      height: 190px;
+    }
+    &__formWrapper .notification {
+      color: #ff472a;
+      margin-top: 0.5rem;
+      font-size: 12px;
+      align-self: self-start;
+      font-weight: 700;
+    }
+    &__formWrapper .field__error {
+      border: 2px solid #ff472a !important;
+    }
+    &__formWrapper .btn {
+      margin-top: 2rem;
+      @media screen and (max-width: 500px) {
+        max-width: 100%;
+      }
+    }
+  }
+  .grid2 {
+    grid-gap: 4rem;
+    @media screen and (max-width: 1000px) {
+      grid-gap: 2rem;
+    }
+    @media screen and (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  .select {
+    &__container {
+      margin-top: 1rem;
+    }
+    &__control {
+      border-radius: 0;
+      border: 1px solid $gray4;
+      background: #e0e0e0;
+      height: 40px;
+    }
+    &__value-container {
+      height: 100% !important;
+    }
+    &__value-container input {
+      margin-top: 0;
+    }
+  }
+}

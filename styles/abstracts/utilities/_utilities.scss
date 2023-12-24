@@ -1,0 +1,353 @@
+.font {
+  &-main {
+    font-family: $font__main;
+  }
+  &-comp {
+    font-family: $font__comp;
+  }
+}
+
+.txt {
+  font-size: $text-paragraphs;
+  line-height: $text-line-height-md;
+  font-weight: 300;
+
+  &-display-main {
+    font-size: $text-display-lg;
+    line-height: 115%;
+    font-weight: 600;
+  }
+  &-display-comp {
+    margin-bottom: 1.15rem;
+    font-size: $text-display-md;
+    line-height: 115%;
+    font-weight: 600;
+    @include respond-to("x-small") {
+      font-size: 2.3rem;
+    }
+  }
+  &-h1 {
+    font-size: $text-h1;
+    line-height: $text-line-height-md;
+    font-weight: 600;
+  }
+  &-h2 {
+    font-size: $text-h2;
+    line-height: $text-line-height-md;
+    font-weight: 600;
+  }
+  &-h3 {
+    font-size: $text-h3;
+    line-height: $text-line-height-md;
+    font-weight: 600;
+  }
+  &-h4 {
+    font-size: $text-h4;
+    line-height: $text-line-height-md;
+    font-weight: 600;
+  }
+  &-h5 {
+    font-size: $text-h5;
+    line-height: $text-line-height-sm;
+    font-weight: 600;
+  }
+  &-h6 {
+    font-size: $text-h6;
+    line-height: $text-line-height-sm;
+    font-weight: 600;
+  }
+  &-btn {
+    font-size: $text-buttons;
+    line-height: $text-line-height-sm;
+    font-weight: 400;
+  }
+  &-md {
+    font-size: $text-paragraphs-md;
+    line-height: $text-line-height-md;
+    font-weight: 400;
+  }
+  &-sm {
+    font-size: $text-paragraphs-small;
+    line-height: $text-line-height-md;
+    font-weight: 400;
+  }
+  &-sm-bold {
+    font-size: $text-paragraphs-small;
+    line-height: $text-line-height-md;
+    font-weight: 600;
+  }
+  &-sm-caps {
+    font-size: $text-paragraphs-small;
+    line-height: $text-line-height-md;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+  &-label {
+    color: $color-shades-500;
+  }
+  &-muted {
+    color: $color-shades-300;
+  }
+  &-prim {
+    color: $color-shades-800;
+  }
+  &-sec {
+    color: $color-shades-500;
+  }
+  &-light {
+    color: $color-shades-000;
+  }
+  &-no-wrap {
+    white-space: nowrap;
+  }
+  &-wrap {
+    white-space: pre-line;
+  }
+  &-center {
+    text-align: center;
+  }
+  &-normalcase {
+    text-transform: none;
+  }
+  &-uppercase {
+    text-transform: uppercase;
+  }
+  &-capitalize {
+    text-transform: capitalize;
+  }
+  &-lowercase {
+    text-transform: lowercase;
+  }
+  &-underline {
+    text-decoration: underline;
+  }
+}
+
+.font-weight {
+  &-light {
+    font-weight: 200;
+  }
+  &-normal {
+    font-weight: 400;
+  }
+  &-medium {
+    font-weight: 600;
+  }
+  &-bold {
+    font-weight: 700;
+  }
+}
+
+.bg {
+  &-prim {
+    background-color: $color-shades-800;
+  }
+  &-sec {
+    background-color: $color-shades-400;
+  }
+}
+
+.border {
+  &-prim {
+    border: 1px solid $color-shades-500;
+  }
+  &-sec {
+    border: 1px solid $color-shades-400;
+  }
+}
+
+.elevation {
+  &-1 {
+    box-shadow: $effect-smooth-shadow-l1;
+  }
+  &-2 {
+    box-shadow: $effect-smooth-shadow-l2;
+  }
+  &-3 {
+    box-shadow: $effect-smooth-shadow-l3;
+  }
+}
+
+.d {
+  &-flex {
+    display: flex;
+    align-items: center;
+  }
+  &-block {
+    display: block;
+  }
+}
+
+.flex {
+  &-column {
+    flex-direction: column;
+  }
+  &-wrap {
+    flex-wrap: wrap;
+  }
+}
+
+
+.v {
+  &-hidden {
+    visibility: hidden;
+  }
+}
+
+.align {
+  &-center {
+    align-items: center;
+  }
+  &-start {
+    align-items: flex-start;
+  }
+  &-end {
+    align-items: flex-end;
+  }
+}
+
+.justify {
+  &-center {
+    justify-content: center;
+  }
+  &-start {
+    justify-content: flex-start;
+  }
+  &-end {
+    justify-content: flex-end;
+  }
+  &-around {
+    justify-content: space-around;
+  }
+  &-between {
+    justify-content: space-between;
+  }
+  &-evenly {
+    justify-content: space-evenly;
+  }
+}
+
+.color {
+  &-main {
+    color: $color-primary !important;
+  }
+  &-comp {
+    color: $color-secondary !important;
+  }
+  &-white {
+    color: white;
+  }
+  &-success {
+    color: $color-success !important;
+  }
+  &-danger {
+    color: $color-danger !important;
+  }
+  &-warning {
+    color: $color-warning !important;
+  }
+  &-dark {
+    color: $color-shades-900 !important;
+  }
+  &-light {
+    color: $color-shades-000 !important;
+  }
+  &-muted {
+    color: $color-shades-300 !important;
+  }
+  &-label {
+    color: $color-shades-200 !important;
+  }
+}
+.bg {
+  &-success {
+    background-color: $color-success;
+  }
+  &-danger {
+    background-color: $color-danger;
+  }
+  &-warning {
+    background-color: $color-warning;
+  }
+  &-dark {
+    background-color: $color-shades-900;
+  }
+  &-light {
+    background-color: $color-shades-000;
+  }
+  &-muted {
+    background-color: $color-shades-300;
+  }
+  &-label {
+    background-color: $color-shades-200;
+  }
+  &-white {
+    background-color: white;
+  }
+}
+
+.border-radius {
+  &-600 {
+    border-radius: $structure-radius-circle;
+  }
+  &-500 {
+    border-radius: $structure-radius-xlg;
+  }
+  &-400 {
+    border-radius: $structure-radius-lg;
+  }
+  &-300 {
+    border-radius: $structure-radius-md;
+  }
+  &-200 {
+    border-radius: $structure-radius-sm;
+  }
+  &-100 {
+    border-radius: $structure-radius-xsm;
+  }
+}
+
+.bg-grads {
+  &-left {
+    background-image: linear-gradient(360deg, #000000c2, #0000007a);
+  }
+  &-right {
+    background-image: linear-gradient(360deg, #000000c2, #0000007a);
+  }
+  &-top {
+    background-image: linear-gradient(360deg, #000000c2, #0000007a);
+  }
+  &-bottom {
+    background-image: linear-gradient(360deg, #000000c2, #0000007a);
+  }
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.relative {
+  position: relative;
+}
+
+.list {
+  &-decimal {
+    list-style: decimal;
+  }
+}
+
+.debugger {
+  border: 1px solid red;
+  width: 100%;
+
+  // &::before {
+  //   content: "";
+  //   display: block;
+  //   width: 100%;
+  //   height: 200px;
+  // }
+}

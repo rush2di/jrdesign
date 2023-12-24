@@ -1,0 +1,11 @@
+.rows--album-card {
+	$card-min-width: 450px;
+	@include rows($card-min-width, 1.5rem);
+	@include respond-to("x-small") {
+		@include rows(100%, 1.5rem);
+	}
+
+	.card .truncated {
+		@include truncate($text-paragraphs, $text-line-height-md, 2);
+	}
+}

@@ -1,0 +1,82 @@
+@import "../../../styles/abstracts/variables/variables";
+
+.guides__wrapper {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.guides {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 0 1.5rem;
+  pointer-events: none;
+  @media screen and (max-width: 1250px) {
+    max-width: calc(100vw - 0px);
+  }
+}
+
+.guides__container {
+  display: grid;
+  grid: 1fr / repeat(4, 1fr);
+  position: relative;
+  max-width: 1204px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.guides__guide {
+  width: 1px;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from($guides1),
+    color-stop(50%, $guides1),
+    color-stop(50%, transparent),
+    to(transparent)
+  );
+  background: linear-gradient(
+    180deg,
+    $guides1,
+    $guides1 50%,
+    transparent 0,
+    transparent
+  );
+  background-size: 1px 8px;
+  opacity: .5;
+
+  &:first-of-type,
+  &:last-of-type {
+    background: $guides2;
+    opacity: .75;
+  }
+
+  &:last-of-type {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+  }
+
+  &:nth-of-type(2n) {
+    @media screen and (max-width: 768px) {
+      visibility: hidden;
+    }
+  }
+
+  &:nth-of-type(3n) {
+    @media screen and (max-width: 599px) {
+      visibility: hidden;
+    }
+  }
+}

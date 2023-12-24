@@ -1,0 +1,401 @@
+// Drop shadows
+@mixin add-shadow($shadow) {
+  -webkit-box-shadow: $shadow; // i-o-s <4.3 & Android <4.1
+  box-shadow: $shadow;
+}
+
+// Placeholder text
+@mixin placeholder($color: $color-placeholders) {
+  &:-moz-placeholder {
+    color: $color;
+  } // Firefox 4-18
+  &::-moz-placeholder {
+    color: $color;
+  } // Firefox 19+
+  &:-ms-input-placeholder {
+    color: $color;
+  } // Internet- Explorer 10+
+  &::-webkit-input-placeholder {
+    color: $color;
+  } // Safari and- Chrome
+}
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+          + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+@mixin add-borders($color, $bg, $radius: $structure-radius-lg) {
+  border: 1px solid $color;
+  border-radius: $radius;
+  background-color: $bg;
+}
+
+@mixin add-wrapper($type: "prim", $radius: true) {
+  @if ($type == "prim") {
+    @include add-borders($color-borders, $color-p-3);
+  }
+  @if ($type == "sec") {
+    @include add-borders($color-p-1, $color-p-4);
+  }
+  @if ($radius == false) {
+    border-radius: 0;
+  }
+}
+
+@mixin truncate($font-size, $line-height, $lines-to-show) {
+  display: block;
+  display: -webkit-box;
+  // max-width: 400px;
+  max-height: $font-size * $line-height * $lines-to-show;
+  font-size: $font-size;
+  line-height: $line-height;
+  -webkit-line-clamp: $lines-to-show;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin add-dark-wrapper($paddings: 1rem 1.25rem 1.5rem) {
+  @include add-borders($color-p-1, $color-p-4, $structure-radius-md);
+  @include add-shadow($effect-smooth-shadow-l1);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: $paddings;
+  width: 100%;
+}
+
+@mixin rows($width, $gap) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(#{$width}, 1fr));
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin rows-2-cols($width, $gap) {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(#{$width}, 1fr));
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin add-borders(
+  $color: $color-shades-300,
+  $bg: $color-shades-000,
+  $radius: $structure-radius-xsm
+) {
+  border: 1px solid $color;
+  border-radius: $radius;
+  background-color: $bg;
+}
+
+@mixin container-sm-parts($max_width) {
+  $container_remains: calc((100vw - #{$max_width}) / 2);
+  width: $container_remains;
+}
+
+@mixin container-sm-part--fluid($max_width, $padding-left) {
+  $container_remains: calc(
+    100vw - (100vw - #{$max_width}) / 2 - #{$padding-left}
+  );
+  max-width: $container_remains;
+  width: 100%;
+}
+
+// Center block
+@mixin center-block {
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Placeholder text
+@mixin placeholder($color: $color-placeholders) {
+  &:-moz-placeholder {
+    color: $color;
+  } // Firefox 4-18
+  &::-moz-placeholder {
+    color: $color;
+  } // Firefox 19+
+  &:-ms-input-placeholder {
+    color: $color;
+  } // Internet- Explorer 10+
+  &::-webkit-input-placeholder {
+    color: $color;
+  } // Safari and- Chrome
+}
+
+@mixin btn-builder(
+  $color-pairs: (
+    // main background color
+    "background": $color-shades-100,
+    // main content color
+    "color": $color-shades-700,
+  ),
+  $effect_light: false,
+  // hover effect style
+  $effect_strength: 8% // hover effect strength
+) {
+  /* Getters */
+  $_background: map-get($color-pairs, "background");
+  $_color: map-get($color-pairs, "color");
+
+  color: $_color;
+  background: $_background;
+  border: 1px solid darken($_background, 5%);
+
+  &:hover,
+  &:focus,
+  &:active {
+    @if $effect_light {
+      background-color: lighten($_background, $effect_strength);
+      color: lighten($_color, 5%);
+    } @else {
+      background-color: darken($_background, $effect_strength);
+      color: darken($_color, 5%);
+    }
+  }
+}
+
+@mixin btn-outline-builder(
+  $color-pairs: (
+    // main background colo
+    "background": $color-shades-100,
+    // main content colo
+    "color": $color-shades-700,
+  ),
+  $is_inverted: false
+) {
+  background-color: transparent;
+  border: 1px solid darken(map-get($color-pairs, "background"), 5%);
+  color: darken(map-get($color-pairs, "background"), 10%);
+
+  @if ($is_inverted) {
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: map-get($color-pairs, "color");
+      color: darken(map-get($color-pairs, "background"), 10%);
+    }
+  } @else {
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: map-get($color-pairs, "background");
+      color: map-get($color-pairs, "color");
+    }
+  }
+}
+
+@mixin btn-grads-builder(
+  $color-pairs: (
+    "background": $color-shades-100,
+    "background-image": $color-shades-100,
+    "color": $color-shades-700,
+  ),
+  $effect_light: false,
+  $effect_strength: 8%,
+  $font_family
+) {
+  /* Getters */
+  $_background: map-get($color-pairs, "background");
+  $_background_image: map-get($color-pairs, "background-image");
+  $_color: map-get($color-pairs, "color");
+
+  position: relative;
+  background: $_background;
+  background: $_background_image;
+  border: 1px solid;
+  border-image: $_background_image 10;
+  color: $_color;
+
+  > span {
+    z-index: 1;
+    font-family: $font_family !important;
+    font-weight: 500;
+  }
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    transition: opacity 0.4s $easing-expo;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    @if $effect_light {
+      background-color: $color-shades-000;
+    } @else {
+      background-color: $color-shades-900;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    @if $effect_light {
+      color: lighten($_color, 5%);
+    } @else {
+      color: darken($_color, 5%);
+    }
+  }
+
+  &:hover::before,
+  &:focus::before,
+  &:active::before {
+    opacity: 0.2;
+  }
+}
+
+@mixin btn-out-grads-builder(
+  $color-pairs: (
+    "background": $color-shades-100,
+    "background-image": $color-shades-100,
+    "color": $color-shades-700,
+  ),
+  $effect_light: false,
+  $effect_strength: 8%,
+  $font_family
+) {
+  /* Getters */
+  $_background: map-get($color-pairs, "background");
+  $_background_image: map-get($color-pairs, "background-image");
+  $_color: map-get($color-pairs, "color");
+
+  position: relative;
+  background: rgba($color-bg-dark, 50%);
+  backdrop-filter: blur(12px);
+  border: 1px solid;
+  border-image: $_background_image 10;
+  color: $_color;
+
+  > span {
+    z-index: 1;
+    font-family: $font_family !important;
+    background: $_background_image;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    @if $effect_light {
+      color: lighten($_color, 5%);
+      background: rgba($color-shades-000, 0.98);
+    } @else {
+      color: darken($_color, 5%);
+      background: rgba($color-shades-900, 0.98);
+    }
+  }
+}
+
+@mixin initHero($mobileMD: 445px, $mobileSM: 376px, $mobileXSM: 361px) {
+  .header {
+    &__wrapper {
+      background: $black;
+      min-height: 500px;
+    }
+    &__wrapper .container {
+      display: flex;
+      align-items: center;
+      min-height: inherit;
+    }
+    &__content {
+      display: block;
+      width: 100%;
+    }
+    &__content .heading3 {
+      color: $gray4 !important;
+      display: block;
+    }
+    &__content .heading2 {
+      color: white !important;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+    }
+    @media screen and (max-width: 768px) {
+      &__wrapper {
+        min-height: 350px;
+      }
+    }
+    @media screen and (max-width: $mobileMD) {
+      &__content .heading2 {
+        font-size: 23px;
+      }
+    }
+    @media screen and (max-width: $mobileSM) {
+      &__content .heading2 {
+        font-size: 20px;
+      }
+    }
+    @media screen and (max-width: $mobileXSM) {
+      &__content .heading2 {
+        font-size: 17px;
+      }
+    }
+  }
+}
+
+@mixin initModulesHero($mobileMD: 445px, $mobileSM: 376px, $mobileXSM: 361px) {
+  [class~="header__wrapper"] {
+    background: $black;
+    min-height: 500px;
+  }
+  [class~="header__wrapper"] [class~="container"] {
+    display: flex;
+    align-items: center;
+    min-height: inherit;
+  }
+  [class~="header__content"] {
+    display: block;
+    width: 100%;
+  }
+  [class~="header__content"] [class~="heading3"] {
+    color: $gray4;
+    display: block;
+  }
+  [class~="header__content"] [class~="heading2"] {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  }
+  @media screen and (max-width: 768px) {
+    &__wrapper {
+      min-height: 350px;
+    }
+  }
+  @media screen and (max-width: $mobileMD) {
+    [class~="header__content"] [class~="heading2"] {
+      font-size: 23px;
+    }
+  }
+  @media screen and (max-width: $mobileSM) {
+    [class~="header__content"] [class~="heading2"] {
+      font-size: 20px;
+    }
+  }
+  @media screen and (max-width: $mobileXSM) {
+    [class~="header__content"] [class~="heading2"] {
+      font-size: 17px;
+    }
+  }
+}

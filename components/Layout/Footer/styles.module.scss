@@ -1,0 +1,100 @@
+@import "../../../styles/abstracts/variables/variables";
+
+.footer {
+  &__main {
+    position: relative;
+    background: white;
+  }
+  &__main [class~="grid2"] {
+    padding: 2rem 0 4rem;
+  }
+  &__logo path {
+    fill: $black;
+  }
+  &__menusWrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__menu li:first-child {
+    font-weight: 700;
+  }
+  &__menu li {
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  &__menu a {
+    transition: 0.4s color ease-out;
+  }
+  &__menu a:hover,
+  &__menu a:focus {
+    color: $gray2;
+  }
+  &__end {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0 1.5rem;
+  }
+  &__end div:first-child {
+    visibility: hidden;
+    width: 200px;
+    height: fit-content;
+    padding: 0.25rem;
+    background: black;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  &__end div:first-child span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: textLoop 5s linear infinite;
+  }
+  &__end div:last-child {
+    display: flex;
+    align-items: flex-end;
+  }
+  &__end div:last-child a {
+    margin-right: 1rem;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+    &__menusWrapper {
+      flex-wrap: wrap;
+    }
+    &__menu {
+      margin: 0 1rem 1rem 0;
+    }
+    &__end {
+      flex-wrap: wrap;
+      flex-direction: column-reverse;
+    }
+    &__end div:last-child {
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-direction: row;
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    &__end div:first-child {
+      visibility: visible;
+      width: 100%;
+    }
+  }
+}
+@media screen and (max-width: 850px) {
+  .grid2 {
+    padding-top: 1.5rem;
+    grid-template-columns: 1fr;
+    row-gap: 3.5rem;
+  }
+}
+
+@keyframes textLoop {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-110%, 0);
+  }
+}

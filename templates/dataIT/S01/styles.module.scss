@@ -1,0 +1,9 @@
+@import "../../../styles/abstracts/variables/variables";
+@import "../../../styles/abstracts/mixins/mixins";
+
+.section01 {
+  @include initModulesHero(500px, 405px, 390px);
+  [class~="header__wrapper"] {
+    min-height: 400px;
+  }
+}

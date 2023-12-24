@@ -1,0 +1,9 @@
+@import "../../../styles/abstracts/variables/variables";
+@import "../../../styles/abstracts/mixins/mixins";
+
+.services {
+  @include initModulesHero(578px, 460px, 405px);
+  [class~="header__content"] [class~="heading2"] {
+    white-space: initial !important;
+  }
+}

@@ -1,0 +1,33 @@
+.sponsors {
+  &__wrapper {
+    background: #dedede;
+    position: relative;
+    padding: 2rem 0 1rem;
+  }
+  &__heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #969696;
+  }
+  &__logosContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+  }
+  &__logosContainer [class~="img__holder"] {
+    transition: all 0.4s ease-out;
+    filter: grayscale(1);
+    opacity: 0.35;
+    max-width: 250px;
+    max-height: 170px;
+    width: 250px;
+    height: 170px;
+  }
+  &__logosContainer a:hover [class~="img__holder"] {
+    filter: grayscale(0);
+    opacity: 0.85;
+  }
+}

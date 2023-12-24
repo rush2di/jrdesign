@@ -1,0 +1,42 @@
+@import "../../../styles/abstracts/variables/variables";
+@import "../../../styles/abstracts/mixins/mixins";
+
+.offerForm {
+  &__contact {
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    input[type="password"],
+    input[type="search"],
+    input[type="number"],
+    input[type="tel"],
+    input[type="range"],
+    input[type="date"],
+    input[type="month"],
+    input[type="week"],
+    input[type="time"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="color"],
+    textarea {
+      background-color: white;
+    }
+    [class~="field--active"] input,
+    [class~="field--active"] textarea {
+      border-color: $color-success-dark-100 !important;
+    }
+  }
+  &__progress {
+    div {
+      height: 8px;
+      border-radius: 0.25rem;
+    }
+    > div {
+      margin-top: 0.5rem;
+      background-color: $color-shades-300;
+    }
+    > div > div {
+      background-color: $color-success;
+    }
+  }
+}

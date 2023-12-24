@@ -1,0 +1,75 @@
+@import "../../styles/abstracts/variables/variables";
+@import "../../styles/abstracts/mixins/mixins";
+
+.covers {
+  &__wrapper {
+    height: 500px;
+    position: relative;
+    background-color: $black;
+    overflow: hidden;
+    padding: 1.5rem;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    transform: rotate(25deg);
+    transform-origin: 105% 30%;
+  }
+  &__list {
+    display: flex;
+    flex-wrap: nowrap;
+    align-self: flex-start;
+  }
+  &__list:first-child * > *,
+  &__list:last-child * > * {
+    @media screen and (max-width: 500px) {
+      display: none !important;
+    }
+  }
+  &__list:nth-child(2),
+  &__list:nth-child(4) {
+    align-self: flex-end;
+  }
+  &__image {
+    position: relative;
+    width: 450px;
+    height: 250px;
+    margin: 0 40px 40px 0;
+  }
+  @media screen and (min-width: 1800px) {
+    &__image {
+      width: 650px;
+      height: 350px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    &__container {
+      transform-origin: 235% 30%;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    &__wrapper {
+      height: 350px;
+    }
+    &__image {
+      width: 355px;
+      height: 200px;
+    }
+    &__container {
+      transform-origin: 195% 60%;
+    }
+    &__list {
+      align-self: center;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    &__container {
+      transform-origin: 220% 60%;
+    }
+  }
+  @media screen and (max-width: 300px) {
+    &__container {
+      transform-origin: 250% 60%;
+    }
+  }
+}

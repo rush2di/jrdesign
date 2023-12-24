@@ -1,0 +1,68 @@
+$_columns: 12;
+$_gutter-x: 1.5rem !default;
+$_gutter-y: 1.5rem !default;
+
+// $class_breakpoints: (
+//   "xsm": 660px,
+//   "sm": 767px,
+//   "md": 992px,
+//   "lg": 1200px,
+// ) !default;
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -1 * $_gutter-y;
+  margin-right: -0.5 * $_gutter-x;
+  margin-left: -0.5 * $_gutter-x;
+
+  &.--row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  &.--col-reverse {
+    flex-direction: column-reverse;
+  }
+
+  @each $bpKey, $bpValue in $class_breakpoints {
+    @media screen and (max-width: #{$bpValue}) {
+      &.--#{$bpKey}-row-reverse {
+        flex-direction: row-reverse;
+      }
+      &.--#{$bpKey}-col-reverse {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+}
+
+@for $i from 1 through $_columns {
+  $_flex-basis: calc(100 / $_columns) * $i;
+
+  .col-#{$i} {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: #{$_flex-basis + "%"};
+    padding-right: $_gutter-x * 0.5;
+    padding-left: $_gutter-x * 0.5;
+    margin-top: $_gutter-y;
+  }
+  .col-offset-#{$i} {
+    margin-left: calc(100% / $_columns) * $i;
+  }
+}
+
+@each $bpKey, $bpValue in $class_breakpoints {
+  @for $i from $_columns through 1 {
+    $_flex-basis: calc(100 / $_columns) * $i;
+
+    @media screen and (max-width: #{$bpValue}) {
+      .col-#{$bpKey}-#{$i} {
+        flex-basis: #{$_flex-basis + "%"};
+      }
+      .col-offset-#{$bpKey}-#{$i} {
+        margin-left: #{$_flex-basis + "%"};
+      }
+    }
+  }
+}

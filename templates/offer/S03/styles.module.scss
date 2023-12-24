@@ -1,0 +1,10 @@
+@import "../../../styles/abstracts/variables/variables";
+@import "../../../styles/abstracts/mixins/mixins";
+
+.S03 {
+  &__wrapper {
+    @include respond-to("small") {
+      flex-direction: column;
+    }
+  }
+}

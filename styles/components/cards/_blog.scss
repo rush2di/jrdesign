@@ -1,0 +1,7 @@
+.rows--blog-card {
+	$card-min-width: 350px;
+	@include rows($card-min-width, 1.5rem);
+	@include respond-to("x-small") {
+		@include rows(100%, 1.5rem);
+	}
+}

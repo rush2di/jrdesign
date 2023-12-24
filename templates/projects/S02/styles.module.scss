@@ -1,0 +1,334 @@
+@import "../../../styles/abstracts/variables/variables";
+@import "../../../styles/abstracts/mixins/mixins";
+
+$ov-55: toRem(55);
+$ov-64: toRem(64);
+$ov-68: toRem(68);
+
+.labels {
+  &__wrapper {
+    margin-top: -6rem;
+    background: $black;
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  &__list [class~="labelBadge"] {
+    margin-right: 1.5rem;
+    margin-bottom: 1.5rem;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    &__wrapper {
+      margin-top: -5rem;
+    }
+    &__list [class~="labelBadge"] {
+      margin-right: 1rem;
+    }
+  }
+  @media screen and (max-width: 380px) {
+    &__list {
+      justify-content: space-between;
+    }
+    &__list [class~="labelBadge"] {
+      margin-right: 0;
+    }
+  }
+}
+
+.projectCard {
+  &__wrapper {
+    height: 400px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.8fr 1fr;
+    margin-bottom: 9.5rem;
+    box-shadow: $shadowLG;
+  }
+  &__wrapper:first-child {
+    margin-top: 4rem;
+  }
+  &__contentWrapper {
+    color: white;
+    position: relative;
+    width: 100%;
+    background: inherit;
+    height: 100%;
+    z-index: 10;
+  }
+  &__contentWrapper [class~="medium"] {
+    display: block;
+    opacity: 0.85;
+    @media screen and (max-width: 768px) and (min-width: 535px) {
+      max-width: calc(100% - 7rem);
+    }
+  }
+  &__contentWrapper [class~="heading2"] {
+    width: 85%;
+    position: relative;
+  }
+  &__contentWrapper [class~="paragraph"] {
+    color: white;
+    opacity: 0.85;
+  }
+  &__shapeWrapper {
+    height: 100%;
+    width: 117%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    display: block;
+    left: 0;
+    z-index: 0;
+  }
+  &__shape {
+    width: 100%;
+    height: 130%;
+    transform: rotate(-8deg) translateY(-70px);
+    position: absolute;
+    filter: brightness(0.88);
+    transform-origin: bottom right;
+  }
+  &__contentWrapper [class~="d-flex"] {
+    position: absolute;
+    bottom: 2rem;
+    padding: 0 1.5rem;
+    font-weight: 600;
+  }
+  &__contentWrapper [class~="d-flex"] a:hover {
+    opacity: 0.75;
+  }
+  &__content {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 1.5rem 3rem 0 1.5rem;
+  }
+  &__icon {
+    position: absolute;
+    right: -72px;
+    z-index: 100;
+    width: 90px;
+    top: 20%;
+    box-shadow: $shadowLG;
+    border-radius: 50%;
+  }
+  &__coverWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  &__coverWrapper [class~="img__holder"] {
+    width: 100%;
+    height: 100%;
+  }
+  &__coverWrapper img:first-child {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0.7;
+    object-fit: cover;
+    object-position: center;
+  }
+  &__coverOverlay {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  &__coverOverlay[class~="--busslev"] {
+    object-fit: cover;
+    object-position: bottom left;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: calc(100% + 3.56375rem);
+    bottom: 0;
+    top: 4px;
+    margin-top: -3.7897769rem;
+  }
+  &__coverOverlayCenter {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  &__coverOverlayLeft {
+    position: absolute;
+    width: 220px;
+    top: -55px;
+    left: 0;
+  }
+  &__coverOverlayRight {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 220px;
+  }
+  @media screen and (max-width: 1200px) {
+    &__coverOverlay {
+      width: 100%;
+      top: 0;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  @media screen and (max-width: 1150px) {
+    &__wrapper {
+      height: 460px;
+    }
+    &__shape {
+      height: 130%;
+      transform: rotate(-8deg) translateY(-77px) translateX(17px);
+    }
+    &__coverOverlay[class~="--busslev"] {
+      height: calc(100% + #{toRem(63.6)});
+      margin-top: #{toRem(-67.2)};
+    }
+  }
+  @media screen and (max-width: 900px) {
+    &__contentWrapper [class~="heading2"] {
+      width: 85%;
+      position: relative;
+      font-size: 25px;
+    }
+    &__content {
+      padding-right: 1rem;
+    }
+    &__shape {
+      height: 130%;
+      transform: rotate(-8deg) translateY(-77px) translateX(17px);
+    }
+    &__coverOverlay[class~="--busslev"] {
+      height: calc(100% + #{toRem(63.6)});
+      margin-top: #{toRem(-67.2)};
+    }
+  }
+  @media screen and (max-width: 768px) {
+    &__wrapper {
+      height: 100%;
+      grid-template-columns: unset;
+    }
+    &__contentWrapper {
+      min-height: 280px;
+    }
+    &__contentWrapper [class~="paragraph"] {
+      margin-bottom: 4rem;
+    }
+    &__content {
+      position: unset;
+      padding: 1.5rem;
+    }
+    &__shapeWrapper {
+      width: 100%;
+    }
+    &__shape {
+      height: 100%;
+      width: 100%;
+      transform: none;
+    }
+    &__icon {
+      right: 30px;
+      width: 90px;
+      top: -25px;
+    }
+    &__coverWrapper {
+      grid-area: 1/1;
+      width: 100%;
+      height: 100%;
+      min-height: 250px;
+    }
+    &__coverOverlay {
+      top: -35px;
+    }
+    &__coverOverlayCenter {
+      width: 220px;
+      margin: 0rem auto 0 3rem;
+    }
+    &__coverOverlay[class~="--busslev"] {
+      height: calc(100% + 2.5rem);
+      bottom: 0;
+      margin: 0;
+      object-fit: cover;
+      width: 100%;
+      object-position: top right;
+      margin-top: -9.12%;
+    }
+  }
+  @media screen and (max-width: 535px) {
+    &__contentWrapper {
+      min-height: 250px;
+      height: auto;
+      _height: 250px;
+    }
+    &__contentWrapper [class~="d-flex"] {
+      position: relative;
+      bottom: 2rem;
+      padding: 0 1.5rem;
+      font-weight: 600;
+    }
+    &__contentWrapper [class~="heading2"] {
+      width: 100%;
+      font-size: 20px;
+      font-weight: 700;
+    }
+    &__shapeWrapper {
+      width: 100%;
+      height: 390px;
+    }
+    &__content {
+      padding: 2rem 1.5rem 1.5rem;
+      position: relative;
+      height: 370px;
+      display: block;
+    }
+    &__icon {
+      right: 1rem;
+      width: 70px;
+      top: -35px;
+    }
+    &__coverOverlayLeft {
+      width: 170px;
+      top: -42px;
+    }
+    &__coverOverlayRight {
+      width: 170px;
+    }
+    &__coverOverlay[class~="--busslev"] {
+      height: calc(100% + 2.5rem);
+      bottom: 0;
+      margin: 0;
+      object-fit: cover;
+      width: 100%;
+      object-position: top right;
+      margin-top: -9.42%;
+    }
+  }
+  @media screen and (max-width: 425px) {
+    &__content {
+      height: 410px;
+    }
+    &__shapeWrapper {
+      height: 430px;
+    }
+    &__coverOverlay[class~="--busslev"] {
+      margin-top: -12.42%;
+    }
+  }
+  @media screen and (max-width: 325px) {
+    &__content {
+      height: 500px;
+    }
+    &__shapeWrapper {
+      height: 520px;
+    }
+    &__contentWrapper a {
+      padding: 0 1.5rem;
+    }
+  }
+}

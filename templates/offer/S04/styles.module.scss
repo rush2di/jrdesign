@@ -1,0 +1,20 @@
+@import "../../../styles/abstracts/variables/variables";
+@import "../../../styles/abstracts/mixins/mixins";
+
+.ReviewHeader {
+  &__wrapper {
+    @include respond-to("x-small") {
+      flex-direction: column;
+      & > a {
+        margin-top: 1rem;
+        width: 100% !important;
+      }
+    }
+  }
+}
+
+.UserReview {
+  &__text {
+    @include truncate($text-paragraphs, $text-line-height-md, 3);
+  }
+}

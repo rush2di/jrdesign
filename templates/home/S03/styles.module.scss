@@ -1,0 +1,67 @@
+.section03 {
+  &__wrapper {
+    padding: 6rem 0;
+  }
+  &__wrapper [class~="paragraph"] {
+    margin-bottom: 1.5rem;
+  }
+  &__coversWrapper {
+    height: calc(49vmax * (9 / 12));
+    width: calc(53vmax * (9 / 12));
+    min-height: 430px;
+    max-height: 550px;
+    position: relative;
+    margin-left: auto;
+  }
+  &__coversWrapper &__coversBlock {
+    position: absolute;
+  }
+  &__coversWrapper &__coversBlock:nth-child(1) {
+    top: 0;
+    right: 0;
+    width: 49%;
+  }
+  &__coversWrapper &__coversBlock:nth-child(2) {
+    top: 27%;
+    left: 11%;
+    width: 66%;
+    z-index: 2;
+  }
+  &__coversWrapper &__coversBlock:nth-child(3) {
+    bottom: 0;
+    right: 12%;
+    width: 50%;
+  }
+  @media screen and (min-width: 2000px) {
+    &__coversWrapper {
+      height: calc(25vmax * (9 / 12));
+      width: calc(29vmax * (9 / 12));
+    }
+  }
+  @media screen and (min-width: 1300px) and (max-width: 2000px) {
+    &__coversWrapper {
+      height: calc(36vmax * (9 / 12));
+      width: calc(39vmax * (9 / 12));
+    }
+  }
+  @media screen and (max-width: 915px) {
+    &__wrapper [class~="grid2"] {
+      display: block;
+      grid-template-columns: none;
+    }
+    &__covers {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    &__wrapper {
+      padding: 4rem 0;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    &__wrapper {
+      min-height: 400px;
+      padding: 2rem 0;
+    }
+  }
+}

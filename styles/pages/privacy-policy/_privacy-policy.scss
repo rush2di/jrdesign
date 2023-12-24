@@ -1,0 +1,30 @@
+.privacy-policy {
+  @include initHero(545px, 438px, 385px);
+  .section {
+    &__wrapper {
+      padding-bottom: 5rem;
+    }
+    &__content {
+      padding: 2rem 1.5rem;
+      background-color: white;
+      margin-top: -10rem;
+      position: relative;
+      box-shadow: $shadowLG;
+    }
+    &__content p {
+      margin-bottom: 1.5rem;
+    }
+    &__content a {
+      color: #5477b0;
+      text-decoration: underline;
+    }
+    &__content b {
+      color: $gray2;
+    }
+    @media screen and (max-width: 786px) {
+      &__content {
+        margin-top: -6rem;
+      }
+    }
+  }
+}

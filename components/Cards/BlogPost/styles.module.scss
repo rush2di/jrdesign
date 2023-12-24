@@ -1,0 +1,13 @@
+@import "../../../styles/abstracts/variables/variables";
+@import "../../../styles/abstracts/mixins/mixins";
+
+.blogPostCard {
+  & [class~="card__cover"] > div:first-child {
+    opacity: initial;
+    height: unset;
+    width: unset;
+  }
+  & [class~="card__content"] > div:first-child {
+    @include truncate(14px, 1.75, 3);
+  }
+}

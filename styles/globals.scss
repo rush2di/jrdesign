@@ -1,0 +1,361 @@
+/* Core */
+@import "./abstracts/abstracts";
+@import "./base/base";
+@import "./components/components";
+
+/* Resources*/
+@import "./pages/pages";
+
+html,
+body {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  // text-transform: uppercase;
+  background-color: $black;
+  overflow-x: hidden;
+}
+
+html {
+  text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+}
+
+html p {
+  max-height: 999999px;
+}
+
+body {
+  position: relative;
+  background-color: $black;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+.page-transition-enter {
+  position: relative;
+  opacity: 0;
+  background: $black;
+}
+div.page-transition-enter::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  background: $black;
+  opacity: 0;
+}
+.page-transition-enter-active {
+  position: relative;
+  transition: all 0.25s;
+  background: $black;
+  opacity: 1;
+}
+div.page-transition-enter-active::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  background: $black;
+  opacity: 1;
+  transition: all 0.25s;
+}
+.page-transition-exit {
+  opacity: 1;
+  position: relative;
+  transition: all 0.25s;
+  background: $black;
+}
+div.page-transition-exit::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  background: $black;
+  opacity: 1;
+  transition: all 0.25s;
+}
+.page-transition-exit-active {
+  opacity: 0;
+  transition: all 0.25s;
+  position: relative;
+  background: $black;
+}
+.page-transition-exit-active::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  background: $black;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.section__main {
+  min-height: calc(100vh - 76px);
+  background-color: white;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Typography */
+
+.huge1 {
+  font-size: 75px;
+  font-weight: 800;
+  line-height: 120%;
+  letter-spacing: 2px;
+  @media screen and (max-width: 768px) {
+    font-size: calc(12vw * (9 / 12));
+  }
+  @media screen and (max-width: 375px) {
+    font-size: calc(11vw * (9 / 12));
+  }
+}
+
+.huge2 {
+  font-size: 55px;
+  font-weight: 800;
+  line-height: 125%;
+  margin-bottom: 1.5rem;
+  @media screen and (max-width: 768px) {
+    font-size: 33px;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 30px;
+  }
+}
+
+.heading1 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 39px;
+  font-weight: 700;
+  line-height: 150%;
+  margin-bottom: 1.5rem;
+}
+
+.heading2 {
+  font-size: 29px;
+  font-weight: 800;
+  line-height: 150%;
+  margin-bottom: 1.5rem;
+}
+
+.heading3 {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 175%;
+  margin-bottom: 0.5rem;
+  &-bold {
+    font-weight: 700;
+  }
+  span {
+    display: inline-block;
+  }
+}
+
+.medium {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 175%;
+  margin-bottom: 0.5rem;
+}
+
+.animated {
+  perspective: 1500px;
+  perspective-origin: 40% 70%;
+  div {
+    overflow: hidden;
+    display: block;
+    width: max-content;
+  }
+  span {
+    display: inline-block;
+    position: relative;
+    margin-left: -0.15px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  &__btn {
+    margin-left: 1.5px;
+    overflow: hidden;
+    margin-bottom: 0;
+    position: relative;
+    width: 170px;
+  }
+  &__btn div:first-child {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    transform: translateY(100%);
+  }
+  &__btn div.light {
+    background: white;
+  }
+  &__btn div.dark {
+    background-color: $black;
+  }
+}
+.paragraph {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.75;
+  color: $paragraph;
+  span {
+    display: inline-block;
+    width: max-content;
+  }
+}
+
+/* Container */
+
+.container {
+  width: 1250px;
+  margin: auto;
+  padding: 0 1.5rem;
+  @media (max-width: 1250px) {
+    width: 100%;
+    margin: 0;
+  }
+  @media (max-width: 450px) {
+    padding: 0 1.5rem;
+  }
+}
+
+.Toastify {
+  z-index: 999999;
+  position: relative;
+}
+
+/* Grids */
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* labels badge */
+
+.labelBadge {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: $gray1;
+  background: $gray4;
+  max-width: 150px;
+  border-radius: 5rem;
+  cursor: pointer;
+  transition: 0.4s background-color ease-out;
+  &.--active {
+    background: $gray2;
+    color: $gray6;
+  }
+  &.--active:hover,
+  &.--active:focus {
+    background: $gray2 !important;
+    color: $gray6 !important;
+  }
+  &:hover,
+  &:focus {
+    background: $gray5;
+  }
+}
+
+// /* Buttons */
+// a.btn,
+// .btn {
+//   cursor: pointer;
+//   min-width: 160px;
+//   max-width: 170px;
+//   width: 100%;
+//   height: 40px;
+//   padding: 0 0.5rem;
+//   font-size: 16px;
+//   font-weight: 700;
+//   border: 0;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   &__prim {
+//     background: $black;
+//     color: white;
+//   }
+//   &__sec {
+//     background: white;
+//     color: $black;
+//   }
+// }
+
+.img {
+  &__holder {
+    position: relative;
+  }
+  &__fit {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  img {
+    transition: all 0.4s ease-out;
+  }
+}
+
+.widget-visible iframe {
+  bottom: 80px !important;
+}
+
+.iframe-holder {
+  position: relative;
+}
+
+// .ready {
+//   // width: 100vw;
+//   // height: 100vh;
+//   background-color: $black;
+//   transition: 1s all ease-out;
+// }
+
+button.Toastify__close-button {
+  min-width: unset;
+  width: unset;
+}

@@ -1,0 +1,15 @@
+.rows--event-card {
+	$card-min-width: 350px;
+	@include rows($card-min-width, 1.5rem);
+	@include respond-to("x-small") {
+		@include rows(100%, 1.5rem);
+	}
+}
+
+.--event-card .truncated {
+	@include truncate($text-paragraphs, $text-line-height-md, 3);
+}
+
+.--event-card.fixed-w {
+	width: 300px;
+}

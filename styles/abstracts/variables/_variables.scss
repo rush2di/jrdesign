@@ -1,0 +1,185 @@
+/* COLORS VARS */
+
+/* BACKGROUND */
+$color-bg-light: #fcfcfc;
+$color-bg-dark: #0d0e11;
+
+/* STATES */
+$color-danger: #f02c20;
+$color-danger-light-100: lighten($color-danger, 10%);
+$color-danger-light-200: lighten($color-danger, 20%);
+$color-danger-light-300: lighten($color-danger, 30%);
+$color-danger-light-400: lighten($color-danger, 40%);
+$color-danger-dark-100: darken($color-danger, 10%);
+$color-danger-dark-200: darken($color-danger, 20%);
+$color-danger-dark-300: darken($color-danger, 30%);
+$color-danger-dark-400: darken($color-danger, 40%);
+$color-success: #03a84e;
+$color-success-light-100: lighten($color-success, 10%);
+$color-success-light-200: lighten($color-success, 20%);
+$color-success-light-300: lighten($color-success, 30%);
+$color-success-light-400: lighten($color-success, 40%);
+$color-success-dark-100: darken($color-success, 10%);
+$color-success-dark-200: darken($color-success, 20%);
+$color-success-dark-300: darken($color-success, 30%);
+$color-success-dark-400: darken($color-success, 40%);
+$color-default: #1172da;
+$color-default-light-100: lighten($color-default, 10%);
+$color-default-light-200: lighten($color-default, 20%);
+$color-default-light-300: lighten($color-default, 30%);
+$color-default-light-400: lighten($color-default, 40%);
+$color-default-dark-100: darken($color-default, 10%);
+$color-default-dark-200: darken($color-default, 20%);
+$color-default-dark-300: darken($color-default, 30%);
+$color-default-dark-400: darken($color-default, 40%);
+$color-warning: #f59e0b;
+$color-warning-light-100: lighten($color-warning, 10%);
+$color-warning-light-200: lighten($color-warning, 20%);
+$color-warning-light-300: lighten($color-warning, 30%);
+$color-warning-light-400: lighten($color-warning, 40%);
+$color-warning-dark-100: darken($color-warning, 10%);
+$color-warning-dark-200: darken($color-warning, 20%);
+$color-warning-dark-300: darken($color-warning, 30%);
+$color-warning-dark-400: darken($color-warning, 40%);
+
+/*SHADES*/
+$color-shades-000: #fafafa;
+$color-shades-100: #f4f4f4;
+$color-shades-200: #e7e7e7;
+$color-shades-300: #d4d4d4;
+$color-shades-400: #a2a2a2;
+$color-shades-500: #717171;
+$color-shades-600: #545454;
+$color-shades-700: #404040;
+$color-shades-800: #282828;
+$color-shades-900: #181818;
+
+/* PRIMARY */
+$color-primary: #12151bbf;
+$color-primary-light-100: lighten($color-primary, 10%);
+$color-primary-light-200: lighten($color-primary, 20%);
+$color-primary-light-300: lighten($color-primary, 30%);
+$color-primary-light-400: lighten($color-primary, 40%);
+$color-primary-dark-100: darken($color-primary, 10%);
+$color-primary-dark-200: darken($color-primary, 20%);
+$color-primary-dark-300: darken($color-primary, 30%);
+$color-primary-dark-400: darken($color-primary, 40%);
+
+/* SECONDARY */
+$color-secondary: #828282;
+$color-secondary-light-100: lighten($color-secondary, 10%);
+$color-secondary-light-200: lighten($color-secondary, 20%);
+$color-secondary-light-300: lighten($color-secondary, 30%);
+$color-secondary-light-400: lighten($color-secondary, 40%);
+$color-secondary-dark-100: darken($color-secondary, 10%);
+$color-secondary-dark-200: darken($color-secondary, 20%);
+$color-secondary-dark-300: darken($color-secondary, 30%);
+$color-secondary-dark-400: darken($color-secondary, 40%);
+
+/* SOCIALS */
+$color-google-red: #bf2f26;
+$color-facebook-blue: #1e5196;
+$color-twitter-blue: #3ea8ec;
+$color-discord-pink: #6f98db;
+
+/* Text-size Variabls */
+$text-display-lg: 3.5rem;
+$text-display-md: 3.25rem;
+$text-h1: 2rem;
+$text-h2: 1.88rem;
+$text-h3: 1.75rem;
+$text-h4: 1.4rem;
+$text-h5: 1.3rem;
+$text-h6: 1.12rem;
+$text-paragraphs: 1rem;
+$text-buttons: 0.949rem;
+$text-paragraphs-md: 0.9rem;
+$text-paragraphs-small: 0.8rem;
+$text-small-caps: 0.8rem;
+$text-line-height-lg: 1.7;
+$text-line-height-md: 1.65;
+$text-line-height-sm: 1.55;
+
+/* Effect Variabls */
+$effect-progress-glow: 0px -0.18115200102329254px 1.222775936126709px #5d5fef14,
+  0px -0.5008620619773865px 3.380819082260132px #5d5fef1f,
+  0px -1.2058829069137573px 8.13970947265625px #5d5fef29,
+  0px -4px 27px #5d5fef3d;
+$effect-smooth-shadow-l1: 0px 0.7246080040931702px 2.354975938796997px #0000000a,
+  0px 2.003448247909546px 6.511207103729248px #0000000d,
+  0px 4.823531627655029px 15.676478385925293px #00000012,
+  0px 16px 22px #0000001c;
+$effect-smooth-shadow-l2: 0px 1.4492160081863403px 4.438223838806152px #00000012,
+  0px 4.006896495819092px 12.27112102508545px #0000001a,
+  0px 9.647063255310059px 29.544132232666016px #00000024,
+  0px 32px 28px #00000036;
+$effect-smooth-shadow-l3: 0px 1.902095913887024px 2.7625679969787598px #0000001a,
+  0px 5.25905179977417px 7.638146877288818px #00000024,
+  0px 12.661770820617676px 18.38971519470215px #00000030,
+  0px 42px 21px #0000004a;
+$effect-shadow-md-1: 0px 8.640000343322754px 15.09000015258789px #0000002b;
+$effect-shadow-md-2: 0px 12.640000343322754px 25.09000015258789px #0000005e;
+$effect-shadow-md-3: 0px 9.640000343322754px 20.09000015258789px 7px #00000066;
+
+$effect-shadow-sm-1: 0px 8px 14px -5px #0000000d;
+$effect-shadow-sm-2: 0px 14px 19px -3px #00000017;
+$effect-shadow-sm-3: 0px 20px 25px -10px #0000002e;
+
+$structure-radius-circle: 50%;
+$structure-radius-xlg: 1.55rem;
+$structure-radius-lg: 1.25rem;
+$structure-radius-md: 0.85rem;
+$structure-radius-sm: 0.6rem;
+$structure-radius-xsm: 0.37rem;
+
+$easing-expo: cubic-bezier(0.04, 1, 0.85, 1.01);
+
+$breakpoints: (
+  "large": 1250px,
+  "medium": 992px,
+  "small": 767px,
+  "x-small": 660px,
+  "xx-small": 500px,
+) !default;
+
+$class_breakpoints: (
+  "lg": 1250px,
+  "md": 992px,
+  "sm": 767px,
+  "xsm": 660px,
+) !default;
+
+/* Fonts variables */
+$font__main: "Source Sans Pro", Arial, Helvetica, -apple-system,
+  BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+  "Helvetica Neue", sans-serif;
+$font__comp: "Tomorrow", sans-serif, -apple-system, BlinkMacSystemFont,
+  "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue",
+  sans-serif;
+$font__code: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$font__pre: "Courier 10 Pitch", courier, monospace;
+$font__line-height-body: 1.5;
+$font__line-height-pre: 1.6;
+
+/* Costume */
+$paragraph: #797979;
+$black: #111111;
+$gray1: #333333;
+$gray2: #4f4f4f;
+$gray3: #828282;
+$gray4: #bdbdbd;
+$gray5: #e0e0e0;
+$gray6: #f2f2f2;
+$success: #00bc29;
+$success_light: #03a84e;
+
+$guides1: #57575727;
+$guides2: #7f7f7f2e;
+
+$shadowLG: 0px 0.4704335927963257px 1.1899203062057495px 0px
+    rgba(0, 0, 0, 0.0225),
+  0px 1.1305173635482788px 2.859543800354004px 0px rgba(0, 0, 0, 0.0323),
+  0px 2.1286637783050537px 5.384267330169678px 0px rgba(0, 0, 0, 0.04),
+  0px 3.7971725463867188px 9.604613304138184px 0px rgba(0, 0, 0, 0.0477),
+  0px 7.102193355560303px 17.964372634887695px 0px rgba(0, 0, 0, 0.0575),
+  0px 17px 43px 0px rgba(0, 0, 0, 0.08);

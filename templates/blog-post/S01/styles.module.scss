@@ -1,0 +1,6 @@
+@import "../../../styles/abstracts/variables/variables";
+@import "../../../styles/abstracts/mixins/mixins";
+
+.blogpost {
+  @include initModulesHero(545px, 438px, 385px);
+}

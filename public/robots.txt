@@ -1,0 +1,6 @@
+Sitemap: https://jrdesign.no/sitemap.xml
+
+User-agent: *
+Allow: /*
+
+Disallow: /api/*
